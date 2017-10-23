@@ -1383,6 +1383,11 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 20;
   height: 30%;
 }
+@media screen and (min-width: 1900px) {
+  .ur-hdr{
+    top: 33%;    
+  }
+}
 .ur-hdr .container {
   max-width: 1224px;
   width: 92%;
@@ -1411,17 +1416,25 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   margin-bottom: 16px;
 }
-.ur-hdr-tag-line{
+/* .ur-hdr-tag-line{
   height: 100px;
   top: 57%;
-}
-.ur-hdr-tag-line p{
+} */
+.ur-hdr-tag2{
   font-size: 27px !important;
   font-family: 'Ubuntu', sans-serif;
   letter-spacing: 1px;
   color: #ffd24c !important;
   font-weight: 300;
+  text-align: center;
+  margin-top: 8%;
 }
+@media screen and (min-width: 1900px) {
+  .ur-hdr-tag2{
+    margin-top: 13%;
+  }
+}
+
 
 .ur-call-us{
   color: rgba(255,255,255, 1);
@@ -1640,7 +1653,40 @@ h1, h2, h3, h4, h5, h6 {
 
 .fa{
   padding-right: 6px;
-  color: #32c5d2;
+  color: #13b1cd;
   top: 5px;
   position: relative;
+}
+
+.ur-section.contact .section-cntainer{
+  height: unset;
+}
+
+.bg-shadow{
+  box-shadow: 0 1.25rem 1.25rem rgba(34, 35, 36, 0.05);
+  padding: 10px;
+  height: 196px;
+}
+.blog-news{
+  color: #13b1cd !important;  
+  font-weight: 600;
+}
+.blog-head{
+  text-align: center !important;
+  padding: 10px 0;
+  width: 100% !important;
+  margin: unset;
+  margin-left: unset !important;
+}
+.blog-sub-head{
+  font-size: 18px !important;
+  font-weight: 200;
+  color: #555;
+}
+.blog-text{
+  font-size: 13px !important;
+  font-weight: 200;
+}
+.blog{
+  padding-bottom: 50px;
 }
