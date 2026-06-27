@@ -1,23 +1,23 @@
-name: my-first-action
+# name: my-first-action
 
-on:
-  push
+# on:
+#   push
 
-jobs:
-  my-first-action:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Hello, world!"
+# jobs:
+#   my-first-action:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo "Hello, world!"
 
-  say-hello:
-      runs-on: ubuntu-latest
-      steps:
-      - run: print("Hello, world!")
-        shell: python
+#   say-hello:
+#       runs-on: ubuntu-latest
+#       steps:
+#       - run: print("Hello, world!")
+#         shell: python
 
-  say-hello-action:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/hello-world-docker-action@v1
-        with:
-          who-to-greet: 'Mona the Octocat'
+#   say-hello-action:
+#       runs-on: ubuntu-latest
+#       steps:
+#       - uses: actions/hello-world-docker-action@v1
+#         with:
+#           who-to-greet: 'Mona the Octocat'
