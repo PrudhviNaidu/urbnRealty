@@ -39,5 +39,5 @@ jobs:
           echo "Workflow variable: $WORKFLOW_VAR"
           echo "Job variable: $JOB_VAR"
           echo "Step variable: $STEP_VAR"
-          echo "Job 2 does not have a job variable, so it will be: $I_AM_A_STEP_VAR2"
+          echo "Job 2 does not have a job variable, so it will be: $STEP_VAR"
         
