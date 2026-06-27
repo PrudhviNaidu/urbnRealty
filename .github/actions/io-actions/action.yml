@@ -36,5 +36,5 @@ runs:
       shell: bash
       run: |
         echo "repository-Owner=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
-        echo "default-branch=${{ github.default_branch }}" >> $GITHUB_OUTPUT
+        echo "default-branch=main" >> $GITHUB_OUTPUT
         echo "repository-description=${{ github.description }}" >> $GITHUB_ENV
