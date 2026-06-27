@@ -10,6 +10,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup and Test Input Output
+        id: io-vars
         uses: ./.github/actions/io-actions
         with:
           python-version: '3.8'
