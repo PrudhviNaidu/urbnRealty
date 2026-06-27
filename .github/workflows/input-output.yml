@@ -24,7 +24,8 @@ runs:
         node-version: ${{ inputs.node-version }}
 
     - name: variables
+      shell: bash # <--- THIS IS REQUIRED IN COMPOSITE ACTIONS
       run: |
-        echo "Repsitory: ${{ github }}"
-        echo "Repsitory: ${{ github }}" >> $GITHUB_ENV
-        
+        echo "Repository: ${{ github.repository }}"
+        # Only store simple strings in environment variables
+        echo "REPO_NAME=${{ github.repository }}" >> $GITHUB_ENV
