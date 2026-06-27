@@ -44,5 +44,5 @@ jobs:
       - name: variables
         shell: bash # <--- THIS IS REQUIRED IN COMPOSITE ACTIONS
         run: |
-          echo "RepositoryOwner=${{ github.repository_owner }}" >> $GITHUB_ENV
+          echo "RepositoryOwner=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
           echo "default_branch=${{ github.default_branch }}" >> $GITHUB_OUTPUT
