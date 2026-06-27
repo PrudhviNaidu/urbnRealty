@@ -19,5 +19,5 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/hello-world-docker-action@v1
-      with:
-        who-to-greet: 'Mona the Octocat'
+        with:
+          who-to-greet: 'Mona the Octocat'
