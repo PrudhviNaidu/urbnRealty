@@ -44,6 +44,6 @@ jobs:
       - name: variables
         shell: bash # <--- THIS IS REQUIRED IN COMPOSITE ACTIONS
         run: |
-          echo "Repository: ${{ github.repository }}"
+          echo "Repository: ${{ github }}"
           # Only store simple strings in environment variables
           echo "REPO_NAME=${{ github.repository }}" >> $GITHUB_ENV
