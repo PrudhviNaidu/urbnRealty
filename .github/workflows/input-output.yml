@@ -13,9 +13,11 @@ inputs:
 outputs:
   repository-Owner:
     description: 'Repository owner'
+    value: ${{ steps.io-vars.outputs.repository-Owner }}
   default-branch:
     description: 'Default branch of the repository'
-
+    value: ${{ steps.io-vars.outputs.default-branch }}
+  
 runs:
   using: 'composite'
   steps:
