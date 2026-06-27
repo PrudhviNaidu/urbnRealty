@@ -1,0 +1,44 @@
+name: Environment Variables
+
+on:
+  push:
+    branches: [ actions ]
+
+env:
+  WORKFLOW_VAR: I_AM_A_WORKFLOW_VAR
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      JOB_VAR: I_AM_A_JOB_VAR
+    steps:
+      - name: Inspect scopes job 1 step 1
+        env:
+          STEP_VAR: I_AM_A_STEP_VAR
+        run: |
+          echo "Hello, world!"
+          echo "Workflow variable: $WORKFLOW_VAR"
+          echo "Job variable: $JOB_VAR"
+          echo "Step variable: $STEP_VAR"
+
+      - name: Inspect scopes job 1 step 2
+        env:
+          STEP_VAR: I_AM_A_STEP_VAR
+        run: |
+          echo "Hello, world!"
+          echo "Workflow variable: $WORKFLOW_VAR"
+          echo "Job variable: $JOB_VAR"
+          echo "Step variable: $STEP_VAR"
+        
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect scopes job 2 step 1
+        run: |
+          echo "Hello, world!"
+          echo "Workflow variable: $WORKFLOW_VAR"
+          echo "Job variable: $JOB_VAR"
+          echo "Step variable: $STEP_VAR"
+        
