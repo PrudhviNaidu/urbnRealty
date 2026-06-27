@@ -33,6 +33,7 @@ runs:
 
     - name: variables
       id: io-vars
+      shell: bash
       run: |
         echo "repository-Owner=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
         echo "default-branch=${{ github.default_branch }}" >> $GITHUB_OUTPUT
