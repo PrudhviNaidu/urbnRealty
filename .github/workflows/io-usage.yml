@@ -1,16 +1,21 @@
+name: IO Usage
+
+on: push
+
 jobs:
-  my-job:
+  io-usage:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Use local action
-        id: reuse-io
-        uses: ./.github/actions/input-output
+      - name: Setup and Test Input Output
+        uses: ./.github/workflows/input-output.yml
         with:
-          python-version: '3.10'
-          node-version: '20'
-        outputs:
-          repository-Owner: ${{ steps.reuse-io.outputs.repository-Owner }}
-          default-branch: ${{ steps.reuse-io.outputs.default-branch }}
+          python-version: '3.8'
+          node-version: '21'
+
+      - name: Display Outputs
+        run: |
+          echo "Repository Owner: ${{ steps.io-vars.outputs.repository-Owner }}"
+          echo "Default Branch: ${{ steps.io-vars.outputs.default-branch }}"
