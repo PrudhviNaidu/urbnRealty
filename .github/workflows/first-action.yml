@@ -1,10 +1,16 @@
-name: First Workflow
-on: workflow_dispatch
+name: my-first-action
+
+on:
+  push
+
 jobs:
-  first_job:
+  my-first-action:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
-        run: echo "Hello world! I'm chittin, the robot!"
-      - name: Print bye
-        run: echo "Bye, I'm running out of juice"
+      run: echo "Hello, world!"
+
+  say-hello:
+      runs-on: ubuntu-latest
+      steps:
+        run: echo "Hello, ${{ github.actor }}!"
+        shell: python
