@@ -7,10 +7,10 @@ jobs:
   my-first-action:
     runs-on: ubuntu-latest
     steps:
-      run: echo "Hello, world!"
+      - run: echo "Hello, world!"
 
   say-hello:
       runs-on: ubuntu-latest
       steps:
-        run: echo "Hello, ${{ github.actor }}!"
+      - run: echo "Hello, ${{ github.actor }}!"
         shell: python
