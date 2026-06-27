@@ -1,0 +1,16 @@
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use local action
+        id: reuse-io
+        uses: ./.github/actions/input-output
+        with:
+          python-version: '3.10'
+          node-version: '20'
+        outputs:
+          repository-Owner: ${{ steps.reuse-io.outputs.repository-Owner }}
+          default-branch: ${{ steps.reuse-io.outputs.default-branch }}
