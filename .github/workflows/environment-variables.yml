@@ -1,48 +1,48 @@
-name: Environment Variables
+# name: Environment Variables
 
-on:
-  push:
-    branches: [ actions ]
+# on:
+#   push:
+#     branches: [ actions ]
 
-env:
-  WORKFLOW_VAR: I_AM_A_WORKFLOW_VAR
+# env:
+#   WORKFLOW_VAR: I_AM_A_WORKFLOW_VAR
 
-jobs:
-  job1:
-    runs-on: ubuntu-latest
-    env:
-      JOB_VAR: I_AM_A_JOB_VAR
-    steps:
-      - env:
-          STEP_VAR: I_AM_A_STEP_VAR
-        run: |
-          echo "Hello, world!"
-          echo "Workflow variable: $WORKFLOW_VAR"
-          echo "Job variable: $JOB_VAR"
-          echo "Step variable: $STEP_VAR"
+# jobs:
+#   job1:
+#     runs-on: ubuntu-latest
+#     env:
+#       JOB_VAR: I_AM_A_JOB_VAR
+#     steps:
+#       - env:
+#           STEP_VAR: I_AM_A_STEP_VAR
+#         run: |
+#           echo "Hello, world!"
+#           echo "Workflow variable: $WORKFLOW_VAR"
+#           echo "Job variable: $JOB_VAR"
+#           echo "Step variable: $STEP_VAR"
 
-      - run: |
-          echo "Hello, world!"
-          echo "Workflow variable: $WORKFLOW_VAR"
-          echo "Job variable: $JOB_VAR"
-          echo "Step variable: $STEP_VAR"
+#       - run: |
+#           echo "Hello, world!"
+#           echo "Workflow variable: $WORKFLOW_VAR"
+#           echo "Job variable: $JOB_VAR"
+#           echo "Step variable: $STEP_VAR"
         
 
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Inspect scopes job 2 step 1
-        env:
-          STEP_VAR: I_AM_A_STEP_VAR2
-        run: |
-          echo "Hello, world!"
-          echo "Workflow variable: $WORKFLOW_VAR"
-          echo "Job variable: $JOB_VAR"
-          echo "Step variable: $STEP_VAR"
-          echo "Job 2 does not have a job variable, so it will be: $STEP_VAR"
+#   job2:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Inspect scopes job 2 step 1
+#         env:
+#           STEP_VAR: I_AM_A_STEP_VAR2
+#         run: |
+#           echo "Hello, world!"
+#           echo "Workflow variable: $WORKFLOW_VAR"
+#           echo "Job variable: $JOB_VAR"
+#           echo "Step variable: $STEP_VAR"
+#           echo "Job 2 does not have a job variable, so it will be: $STEP_VAR"
         
-      - name: variables
-        shell: bash # <--- THIS IS REQUIRED IN COMPOSITE ACTIONS
-        run: |
-          echo "RepositoryOwner=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
-          echo "default_branch=${{ github.default_branch }}" >> $GITHUB_OUTPUT
+#       - name: variables
+#         shell: bash # <--- THIS IS REQUIRED IN COMPOSITE ACTIONS
+#         run: |
+#           echo "RepositoryOwner=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
+#           echo "default_branch=${{ github.default_branch }}" >> $GITHUB_ENV
