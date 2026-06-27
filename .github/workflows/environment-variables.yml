@@ -32,9 +32,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Inspect scopes job 2 step 1
+        env:
+          STEP_VAR: I_AM_A_STEP_VAR2
         run: |
           echo "Hello, world!"
           echo "Workflow variable: $WORKFLOW_VAR"
           echo "Job variable: $JOB_VAR"
           echo "Step variable: $STEP_VAR"
+          echo "Job 2 does not have a job variable, so it will be: $I_AM_A_STEP_VAR2"
         
