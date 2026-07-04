@@ -18,9 +18,9 @@ jobs:
 
       - name: Inspect values
         run: |
-          echo "EXP_REPO_SECR: ${{ EXP_REPO_SECR}}"
-          echo "EXP_REPO_VARI: ${{ EXP_REPO_VARI }}"
-          echo "EXP_ENV_SECR: ${{ EXP_ENV_SECR }}"
+          echo "EXP_REPO_SECR: $EXP_REPO_SECR"
+          echo "EXP_REPO_VARI: $EXP_REPO_VARI"
+          echo "EXP_ENV_SECR: $EXP_ENV_SECR"
           echo "EXP_ENV_VARI: ${{ vars.EXP_ENV_VARI }}"
 
       - name: Setup and Test Input Output
