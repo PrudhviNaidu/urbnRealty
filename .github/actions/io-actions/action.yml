@@ -40,7 +40,9 @@ runs:
     - name: variables
       id: io-vars
       shell: bash
+      env:
+        DESCRIPTION: ${{ env.description }}
       run: |
         echo "repository-Owner=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
         echo "default-branch=main" >> $GITHUB_OUTPUT
-        echo "description=${{ env.description }}" >> $GITHUB_OUTPUT
+        echo "description=$DESCRIPTION" >> $GITHUB_OUTPUT
