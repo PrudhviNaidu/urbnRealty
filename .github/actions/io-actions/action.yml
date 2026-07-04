@@ -1,5 +1,8 @@
 name: Setup and Test Input Output
 
+env:
+  description: I_AM_A_WORKFLOW_VAR
+
 inputs:
   python-version:
     description: 'Python version'
@@ -37,4 +40,3 @@ runs:
       run: |
         echo "repository-Owner=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
         echo "default-branch=main" >> $GITHUB_OUTPUT
-        echo "description=${{ github.description }}" >> $GITHUB_ENV
