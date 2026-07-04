@@ -5,9 +5,23 @@ on: push
 jobs:
   io-usage:
     runs-on: ubuntu-latest
+    environment: staging
+    env:
+      EXP_REPO_SECR: ${{ secrets.EXP_REPO_SECR }}
+      EXP_REPO_VARI: ${{ secrets.EXP_REPO_VARI }}
+      EXP_ENV_SECR: ${{ secrets.EXP_ENV_SECR }}
+      EXP_ENV_VARI: ${{ secrets.EXP_ENV_VARI }}
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Inspect values
+        run: |
+          echo "EXP_REPO_SECR: ${{ secrets.EXP_REPO_SECR }}"
+          echo "EXP_REPO_VARI: ${{ secrets.EXP_REPO_VARI }}"
+          echo "EXP_ENV_SECR: ${{ secrets.EXP_ENV_SECR }}"
+          echo "EXP_ENV_VARI: ${{ secrets.EXP_ENV_VARI }}"
 
       - name: Setup and Test Input Output
         id: io-vars
