@@ -20,4 +20,4 @@ jobs:
         run: |
           echo "Repository Owner: ${{ steps.io-vars.outputs.repository-Owner }}"
           echo "Default Branch: ${{ steps.io-vars.outputs.default-branch }}"
-          echo "Repo description: $description"
+          echo "Repo description: ${{ steps.io-vars.outputs.description }}"

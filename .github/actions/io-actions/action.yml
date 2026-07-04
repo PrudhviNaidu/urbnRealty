@@ -40,3 +40,4 @@ runs:
       run: |
         echo "repository-Owner=${{ github.repository_owner }}" >> $GITHUB_OUTPUT
         echo "default-branch=main" >> $GITHUB_OUTPUT
+        echo "description=${{ env.description }}" >> $GITHUB_OUTPUT
