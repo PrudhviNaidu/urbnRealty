@@ -20,6 +20,9 @@ outputs:
   default-branch:
     description: 'Default branch of the repository'
     value: ${{ steps.io-vars.outputs.default-branch }}
+  description:
+    description: 'Repository description'
+    value: ${{ steps.io-vars.outputs.description }}
   
 runs:
   using: 'composite'
